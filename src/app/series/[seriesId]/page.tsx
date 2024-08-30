@@ -76,7 +76,7 @@ export default async function SeriesPage({ params }: Params) {
 
                 <div className="space-y-8">
                     <TypographyH2 className="text-center">Matches</TypographyH2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
                         {matchList.map((match) => {
                             return <MatchCard key={match.id} match={match} />;
                         })}

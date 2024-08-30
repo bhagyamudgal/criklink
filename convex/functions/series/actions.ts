@@ -138,7 +138,7 @@ export const getAndSaveMatches = internalAction({
 export const fixSeriesDate = internalAction({
     handler: async (ctx) => {
         const series = await ctx.runQuery(
-            api.functions.series.queries.getAllSeriesWithoutPagination,
+            internal.functions.series.queries.getAllSeriesWithoutPagination,
             {}
         );
 

@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname: "g.cricapi.com",
+                hostname: "*",
                 pathname: "**",
                 protocol: "https",
             },

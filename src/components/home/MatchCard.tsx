@@ -7,15 +7,12 @@ import { Match } from "@/types/cricket-data";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Center } from "../common/Center";
 import { MatchStatusBadge } from "./MatchStatusBadge";
 
 export function MatchCard({ match }: { match: Match }) {
     if (!match?.teamInfo || match?.teamInfo?.length === 0) {
         return null;
-    }
-
-    if (new Date(match.dateTimeGMT) < new Date() && !match.matchEnded) {
-        match.matchEnded = true;
     }
 
     return (
@@ -29,6 +26,11 @@ export function MatchCard({ match }: { match: Match }) {
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
+                        <Center className="my-2">
+                            <Badge variant="outline" className="capitalize">
+                                {match.matchType}
+                            </Badge>
+                        </Center>
                         <div className="flex justify-between items-center">
                             {match.teamInfo.map((team) => (
                                 <div
@@ -59,10 +61,7 @@ export function MatchCard({ match }: { match: Match }) {
                             </div>
                         </div>
                         <div className="mt-2 flex items-center justify-center gap-2">
-                            <Badge variant="outline" className="capitalize">
-                                {match.matchType}
-                            </Badge>
-                            {match.matchEnded && match.status && (
+                            {match.status && (
                                 <Badge variant="secondary">
                                     {match.status}
                                 </Badge>

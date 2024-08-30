@@ -1,7 +1,7 @@
 import { DB_TABLES } from "@/constants/db";
 import { paginationOptsValidator } from "convex/server";
 import { v } from "convex/values";
-import { query } from "../../_generated/server";
+import { internalQuery, query } from "../../_generated/server";
 
 export const getSeriesBySeriesId = query({
     args: { seriesId: DB_TABLES.SERIES.doc.fields.seriesId },
@@ -39,7 +39,7 @@ export const getAllSeries = query({
     },
 });
 
-export const getAllSeriesWithoutPagination = query({
+export const getAllSeriesWithoutPagination = internalQuery({
     handler: async (ctx, args) => {
         const series = await ctx.db.query(DB_TABLES.SERIES.name).collect();
 
