@@ -1,7 +1,6 @@
 import { z } from "zod";
 
-const envSchema = z.object({
-    TZ: z.string().optional().default("Etc/UTC"),
+export const webEnvSchema = z.object({
     NEXT_PUBLIC_VERCEL_ENV: z
         .union([
             z.literal("production"),
@@ -15,15 +14,27 @@ const envSchema = z.object({
         z.literal("mainnet-beta"),
     ]),
     NEXT_PUBLIC_SOLANA_RPC_URL: z.string().url(),
+    NEXT_PUBLIC_CONVEX_URL: z.string().url(),
+});
+
+export const apiEnvSchema = z.object({
+    TZ: z.string().optional().default("Etc/UTC"),
+    CRICKET_DATA_API_KEY: z.string(),
+    UPSTASH_REDIS_REST_URL: z.string().url(),
+    UPSTASH_REDIS_REST_TOKEN: z.string(),
 });
 
 const ENV_CONFIG = {
     NEXT_PUBLIC_VERCEL_ENV: process.env["NEXT_PUBLIC_VERCEL_ENV"],
     NEXT_PUBLIC_SOLANA_NETWORK: process.env["NEXT_PUBLIC_SOLANA_NETWORK"],
     NEXT_PUBLIC_SOLANA_RPC_URL: process.env["NEXT_PUBLIC_SOLANA_RPC_URL"],
+    NEXT_PUBLIC_CONVEX_URL: process.env["NEXT_PUBLIC_CONVEX_URL"],
+    CRICKET_DATA_API_KEY: process.env["CRICKET_DATA_API_KEY"],
+    UPSTASH_REDIS_REST_URL: process.env["UPSTASH_REDIS_REST_URL"],
+    UPSTASH_REDIS_REST_TOKEN: process.env["UPSTASH_REDIS_REST_TOKEN"],
 };
 
-export function parseEnv() {
+export function parseEnv<T extends z.ZodRawShape>(envSchema: z.ZodObject<T>) {
     try {
         const envValidationResult = envSchema.safeParse(ENV_CONFIG);
 
@@ -34,8 +45,6 @@ export function parseEnv() {
         return envValidationResult.data;
     } catch (error) {
         console.error("Error parsing web environment variables =>", error);
-        process.exit(1);
+        throw error;
     }
 }
-
-export const env = parseEnv();

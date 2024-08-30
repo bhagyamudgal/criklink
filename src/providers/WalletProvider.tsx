@@ -1,5 +1,6 @@
 import { WalletNotification } from "@/components/wallet/WalletNotification";
-import { env } from "@/lib/env";
+import { webEnv } from "@/env/web";
+
 import { UnifiedWalletProvider } from "@jup-ag/wallet-adapter";
 import React, { useMemo } from "react";
 
@@ -13,7 +14,7 @@ export function WalletProvider({ children }: WalletProvider) {
             wallets={wallets}
             config={{
                 autoConnect: true,
-                env: env.NEXT_PUBLIC_SOLANA_NETWORK,
+                env: webEnv.NEXT_PUBLIC_SOLANA_NETWORK,
                 metadata: {
                     name: "UnifiedWallet",
                     description: "UnifiedWallet",

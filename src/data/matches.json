@@ -1,0 +1,706 @@
+{
+    "apikey": "c1bfa91b-70b3-49f8-9a7a-3b4cf3afb938",
+    "data": [
+        {
+            "id": "b42bf11c-2d6d-4bf6-ae52-e7beff619d3d",
+            "name": "Tanzania vs Malawi, 15th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-26",
+            "dateTimeGMT": "2024-09-26T10:50:00",
+            "teams": ["Tanzania", "Malawi"],
+            "teamInfo": [
+                {
+                    "name": "Malawi",
+                    "shortname": "MWI",
+                    "img": "https://g.cricapi.com/iapi/624-637869397422129750.webp?w=48"
+                },
+                {
+                    "name": "Tanzania",
+                    "shortname": "TZA",
+                    "img": "https://g.cricapi.com/iapi/660-637867438190984232.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "6140dda9-3a49-414c-8674-805b1cf05e0f",
+            "name": "Cameroon vs Lesotho, 14th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-26",
+            "dateTimeGMT": "2024-09-26T06:30:00",
+            "teams": ["Cameroon", "Lesotho"],
+            "teamInfo": [
+                {
+                    "name": "Cameroon",
+                    "shortname": "CAM",
+                    "img": "https://g.cricapi.com/iapi/2415-637992079740539457.webp?w=48"
+                },
+                {
+                    "name": "Lesotho",
+                    "shortname": "LES",
+                    "img": "https://g.cricapi.com/iapi/622-637876983538194362.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "c0b941b9-c559-46cd-8582-012cd4d6a94b",
+            "name": "Mali vs Ghana, 13th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-26",
+            "dateTimeGMT": "2024-09-26T06:30:00",
+            "teams": ["Mali", "Ghana"],
+            "teamInfo": [
+                {
+                    "name": "Ghana",
+                    "shortname": "GHA",
+                    "img": "https://g.cricapi.com/iapi/607-637869112521081863.webp?w=48"
+                },
+                {
+                    "name": "Mali",
+                    "shortname": "ML",
+                    "img": "https://h.cricapi.com/img/icon512.png"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "1bc63414-2f0c-4a3f-9567-6952c8647088",
+            "name": "Malawi vs Cameroon, 12th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-25",
+            "dateTimeGMT": "2024-09-25T10:50:00",
+            "teams": ["Malawi", "Cameroon"],
+            "teamInfo": [
+                {
+                    "name": "Cameroon",
+                    "shortname": "CAM",
+                    "img": "https://g.cricapi.com/iapi/2415-637992079740539457.webp?w=48"
+                },
+                {
+                    "name": "Malawi",
+                    "shortname": "MWI",
+                    "img": "https://g.cricapi.com/iapi/624-637869397422129750.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "b2d76439-95fa-44c7-8e10-210e60b36026",
+            "name": "Mali vs Lesotho, 11th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-25",
+            "dateTimeGMT": "2024-09-25T10:50:00",
+            "teams": ["Mali", "Lesotho"],
+            "teamInfo": [
+                {
+                    "name": "Lesotho",
+                    "shortname": "LES",
+                    "img": "https://g.cricapi.com/iapi/622-637876983538194362.webp?w=48"
+                },
+                {
+                    "name": "Mali",
+                    "shortname": "ML",
+                    "img": "https://h.cricapi.com/img/icon512.png"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "7d702fb0-3743-49bb-ad8e-a6c5bc3ab0bc",
+            "name": "Ghana vs Tanzania, 10th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-25",
+            "dateTimeGMT": "2024-09-25T06:30:00",
+            "teams": ["Ghana", "Tanzania"],
+            "teamInfo": [
+                {
+                    "name": "Ghana",
+                    "shortname": "GHA",
+                    "img": "https://g.cricapi.com/iapi/607-637869112521081863.webp?w=48"
+                },
+                {
+                    "name": "Tanzania",
+                    "shortname": "TZA",
+                    "img": "https://g.cricapi.com/iapi/660-637867438190984232.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "fbcce0aa-219f-4080-b039-4d589a937253",
+            "name": "Tanzania vs Cameroon, 8th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-24",
+            "dateTimeGMT": "2024-09-24T10:50:00",
+            "teams": ["Tanzania", "Cameroon"],
+            "teamInfo": [
+                {
+                    "name": "Cameroon",
+                    "shortname": "CAM",
+                    "img": "https://g.cricapi.com/iapi/2415-637992079740539457.webp?w=48"
+                },
+                {
+                    "name": "Tanzania",
+                    "shortname": "TZA",
+                    "img": "https://g.cricapi.com/iapi/660-637867438190984232.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "36ed3b7d-0819-4682-97c1-11bdb3ca7fdc",
+            "name": "Mali vs Malawi, 9th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-24",
+            "dateTimeGMT": "2024-09-24T10:50:00",
+            "teams": ["Mali", "Malawi"],
+            "teamInfo": [
+                {
+                    "name": "Malawi",
+                    "shortname": "MWI",
+                    "img": "https://g.cricapi.com/iapi/624-637869397422129750.webp?w=48"
+                },
+                {
+                    "name": "Mali",
+                    "shortname": "ML",
+                    "img": "https://h.cricapi.com/img/icon512.png"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "383a089a-81a4-42b5-a17a-333bbb90378f",
+            "name": "Lesotho vs Ghana, 7th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-24",
+            "dateTimeGMT": "2024-09-24T06:30:00",
+            "teams": ["Lesotho", "Ghana"],
+            "teamInfo": [
+                {
+                    "name": "Ghana",
+                    "shortname": "GHA",
+                    "img": "https://g.cricapi.com/iapi/607-637869112521081863.webp?w=48"
+                },
+                {
+                    "name": "Lesotho",
+                    "shortname": "LES",
+                    "img": "https://g.cricapi.com/iapi/622-637876983538194362.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "6bff98a0-7c11-454d-bcbd-c477e1c70856",
+            "name": "Lesotho vs Tanzania, 6th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-22",
+            "dateTimeGMT": "2024-09-22T10:50:00",
+            "teams": ["Lesotho", "Tanzania"],
+            "teamInfo": [
+                {
+                    "name": "Lesotho",
+                    "shortname": "LES",
+                    "img": "https://g.cricapi.com/iapi/622-637876983538194362.webp?w=48"
+                },
+                {
+                    "name": "Tanzania",
+                    "shortname": "TZA",
+                    "img": "https://g.cricapi.com/iapi/660-637867438190984232.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "8cb84116-c49b-43b1-95cd-a333776119b9",
+            "name": "Ghana vs Malawi, 5th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-22",
+            "dateTimeGMT": "2024-09-22T06:30:00",
+            "teams": ["Ghana", "Malawi"],
+            "teamInfo": [
+                {
+                    "name": "Ghana",
+                    "shortname": "GHA",
+                    "img": "https://g.cricapi.com/iapi/607-637869112521081863.webp?w=48"
+                },
+                {
+                    "name": "Malawi",
+                    "shortname": "MWI",
+                    "img": "https://g.cricapi.com/iapi/624-637869397422129750.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "83a6f877-784a-49d7-89c1-0203f81ac542",
+            "name": "Cameroon vs Mali, 4th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-22",
+            "dateTimeGMT": "2024-09-22T06:30:00",
+            "teams": ["Cameroon", "Mali"],
+            "teamInfo": [
+                {
+                    "name": "Cameroon",
+                    "shortname": "CAM",
+                    "img": "https://g.cricapi.com/iapi/2415-637992079740539457.webp?w=48"
+                },
+                {
+                    "name": "Mali",
+                    "shortname": "ML",
+                    "img": "https://h.cricapi.com/img/icon512.png"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "599a4a9c-0749-461e-8a1f-ef95383d4038",
+            "name": "Tanzania vs Mali, 3rd Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-21",
+            "dateTimeGMT": "2024-09-21T10:50:00",
+            "teams": ["Tanzania", "Mali"],
+            "teamInfo": [
+                {
+                    "name": "Mali",
+                    "shortname": "ML",
+                    "img": "https://h.cricapi.com/img/icon512.png"
+                },
+                {
+                    "name": "Tanzania",
+                    "shortname": "TZA",
+                    "img": "https://g.cricapi.com/iapi/660-637867438190984232.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "b2eb9814-f40a-497f-befb-b1be1d1d66f2",
+            "name": "Ghana vs Cameroon, 2nd Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-21",
+            "dateTimeGMT": "2024-09-21T10:50:00",
+            "teams": ["Ghana", "Cameroon"],
+            "teamInfo": [
+                {
+                    "name": "Cameroon",
+                    "shortname": "CAM",
+                    "img": "https://g.cricapi.com/iapi/2415-637992079740539457.webp?w=48"
+                },
+                {
+                    "name": "Ghana",
+                    "shortname": "GHA",
+                    "img": "https://g.cricapi.com/iapi/607-637869112521081863.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "adc6488d-2e2b-4287-bf68-84f5801a7679",
+            "name": "Malawi vs Lesotho, 1st Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "TBC, TBC",
+            "date": "2024-09-21",
+            "dateTimeGMT": "2024-09-21T06:30:00",
+            "teams": ["Malawi", "Lesotho"],
+            "teamInfo": [
+                {
+                    "name": "Lesotho",
+                    "shortname": "LES",
+                    "img": "https://g.cricapi.com/iapi/622-637876983538194362.webp?w=48"
+                },
+                {
+                    "name": "Malawi",
+                    "shortname": "MWI",
+                    "img": "https://g.cricapi.com/iapi/624-637869397422129750.webp?w=48"
+                }
+            ],
+            "series_id": "08ae1cff-b4b9-4dd6-8f1e-14e3ac08cda8",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "84c27a7a-009d-40d1-8f0a-b739f989d25b",
+            "name": "Pakistan Women vs South Africa Women, 3rd T20I",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Multan Cricket Stadium, Multan",
+            "date": "2024-09-20",
+            "dateTimeGMT": "2024-09-20T05:00:00",
+            "teams": ["Pakistan Women", "South Africa Women"],
+            "teamInfo": [
+                {
+                    "name": "Pakistan Women",
+                    "shortname": "PAKW",
+                    "img": "https://g.cricapi.com/iapi/67-637877074931980375.webp?w=48"
+                },
+                {
+                    "name": "South Africa Women",
+                    "shortname": "RSAW",
+                    "img": "https://g.cricapi.com/iapi/83-637877067733114809.webp?w=48"
+                }
+            ],
+            "series_id": "bbad4d91-68ce-4b27-ae7c-67a69c64e39d",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "392e0ef7-ebc3-466c-b39b-4c29a0e8e7e9",
+            "name": "Pakistan Women vs South Africa Women, 2nd T20I",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Multan Cricket Stadium, Multan",
+            "date": "2024-09-18",
+            "dateTimeGMT": "2024-09-18T14:00:00",
+            "teams": ["Pakistan Women", "South Africa Women"],
+            "teamInfo": [
+                {
+                    "name": "Pakistan Women",
+                    "shortname": "PAKW",
+                    "img": "https://g.cricapi.com/iapi/67-637877074931980375.webp?w=48"
+                },
+                {
+                    "name": "South Africa Women",
+                    "shortname": "RSAW",
+                    "img": "https://g.cricapi.com/iapi/83-637877067733114809.webp?w=48"
+                }
+            ],
+            "series_id": "bbad4d91-68ce-4b27-ae7c-67a69c64e39d",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "351eb37e-0317-4b78-8256-4907b766cc3d",
+            "name": "Pakistan Women vs South Africa Women, 1st T20I",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Multan Cricket Stadium, Multan",
+            "date": "2024-09-16",
+            "dateTimeGMT": "2024-09-16T14:00:00",
+            "teams": ["Pakistan Women", "South Africa Women"],
+            "teamInfo": [
+                {
+                    "name": "Pakistan Women",
+                    "shortname": "PAKW",
+                    "img": "https://g.cricapi.com/iapi/67-637877074931980375.webp?w=48"
+                },
+                {
+                    "name": "South Africa Women",
+                    "shortname": "RSAW",
+                    "img": "https://g.cricapi.com/iapi/83-637877067733114809.webp?w=48"
+                }
+            ],
+            "series_id": "bbad4d91-68ce-4b27-ae7c-67a69c64e39d",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "66d306af-169c-4662-b15c-fe282461db00",
+            "name": "Tbc vs Tbc, Final",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-15",
+            "dateTimeGMT": "2024-09-15T12:30:00",
+            "teams": ["Tbc", "Tbc"],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "1a8604e1-a669-4c2b-8eda-0f762e3c79f5",
+            "name": "Namibia Women vs Zimbabwe Women, 9th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-14",
+            "dateTimeGMT": "2024-09-14T12:30:00",
+            "teams": ["Namibia Women", "Zimbabwe Women"],
+            "teamInfo": [
+                {
+                    "name": "Namibia Women",
+                    "shortname": "NAMW",
+                    "img": "https://g.cricapi.com/iapi/1128-637877082812217889.webp?w=48"
+                },
+                {
+                    "name": "Zimbabwe Women",
+                    "shortname": "ZIMW",
+                    "img": "https://g.cricapi.com/iapi/1141-637877080090615236.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "9025a726-d913-4a18-ac52-5a78e2158f64",
+            "name": "Namibia Women vs United Arab Emirates Women, 7th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-12",
+            "dateTimeGMT": "2024-09-12T12:30:00",
+            "teams": ["Namibia Women", "United Arab Emirates Women"],
+            "teamInfo": [
+                {
+                    "name": "Namibia Women",
+                    "shortname": "NAMW",
+                    "img": "https://g.cricapi.com/iapi/1128-637877082812217889.webp?w=48"
+                },
+                {
+                    "name": "United Arab Emirates Women",
+                    "shortname": "UAEW",
+                    "img": "https://g.cricapi.com/iapi/1136-637877081374906304.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "0758940b-fe31-4bed-be6c-8267090dbda4",
+            "name": "Zimbabwe Women vs Namibia Women, 6th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-11",
+            "dateTimeGMT": "2024-09-11T12:30:00",
+            "teams": ["Zimbabwe Women", "Namibia Women"],
+            "teamInfo": [
+                {
+                    "name": "Namibia Women",
+                    "shortname": "NAMW",
+                    "img": "https://g.cricapi.com/iapi/1128-637877082812217889.webp?w=48"
+                },
+                {
+                    "name": "Zimbabwe Women",
+                    "shortname": "ZIMW",
+                    "img": "https://g.cricapi.com/iapi/1141-637877080090615236.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "9df4855b-6ae5-4b62-b289-0546fee7d7f1",
+            "name": "Zimbabwe Women vs United Arab Emirates Women, 5th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-10",
+            "dateTimeGMT": "2024-09-10T12:30:00",
+            "teams": ["Zimbabwe Women", "United Arab Emirates Women"],
+            "teamInfo": [
+                {
+                    "name": "United Arab Emirates Women",
+                    "shortname": "UAEW",
+                    "img": "https://g.cricapi.com/iapi/1136-637877081374906304.webp?w=48"
+                },
+                {
+                    "name": "Zimbabwe Women",
+                    "shortname": "ZIMW",
+                    "img": "https://g.cricapi.com/iapi/1141-637877080090615236.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "ad4a0c5f-65fb-4cc9-88fa-1a3da3a62fc5",
+            "name": "United Arab Emirates Women vs Namibia Women, 4th Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-09",
+            "dateTimeGMT": "2024-09-09T12:30:00",
+            "teams": ["United Arab Emirates Women", "Namibia Women"],
+            "teamInfo": [
+                {
+                    "name": "Namibia Women",
+                    "shortname": "NAMW",
+                    "img": "https://g.cricapi.com/iapi/1128-637877082812217889.webp?w=48"
+                },
+                {
+                    "name": "United Arab Emirates Women",
+                    "shortname": "UAEW",
+                    "img": "https://g.cricapi.com/iapi/1136-637877081374906304.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        },
+        {
+            "id": "9a95968f-3c3a-463e-8c48-f9fb6c1deedc",
+            "name": "Namibia Women vs Zimbabwe Women, 3rd Match",
+            "matchType": "t20",
+            "status": "Match not started",
+            "venue": "Wanderers Cricket Ground, Windhoek",
+            "date": "2024-09-08",
+            "dateTimeGMT": "2024-09-08T12:30:00",
+            "teams": ["Namibia Women", "Zimbabwe Women"],
+            "teamInfo": [
+                {
+                    "name": "Namibia Women",
+                    "shortname": "NAMW",
+                    "img": "https://g.cricapi.com/iapi/1128-637877082812217889.webp?w=48"
+                },
+                {
+                    "name": "Zimbabwe Women",
+                    "shortname": "ZIMW",
+                    "img": "https://g.cricapi.com/iapi/1141-637877080090615236.webp?w=48"
+                }
+            ],
+            "series_id": "178ce754-0bad-43c2-bea1-e2b20c80c1ba",
+            "fantasyEnabled": false,
+            "bbbEnabled": false,
+            "hasSquad": false,
+            "matchStarted": false,
+            "matchEnded": false
+        }
+    ],
+    "status": "success",
+    "info": {
+        "hitsToday": 8,
+        "hitsUsed": 1,
+        "hitsLimit": 100,
+        "credits": 0,
+        "server": 7,
+        "offsetRows": 0,
+        "totalRows": 9110,
+        "queryTime": 161.5582,
+        "s": 0,
+        "cache": 0
+    }
+}

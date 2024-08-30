@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { format } from "date-fns";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -18,4 +19,35 @@ export function extractErrorMessage(error: unknown, fallbackMessage?: string) {
     } catch (error) {
         return errorMessage;
     }
+}
+
+export function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export function formatSeriesDate(startDate: string, endDate: string) {
+    return `${format(new Date(startDate), "yyyy, MMM d")} - ${format(
+        new Date(endDate),
+        "yyyy, MMM d"
+    )}`;
+}
+
+export function formatMatchDateTime(dateTimeGMT: string) {
+    return format(new Date(dateTimeGMT), "yyyy, MMM d p");
+}
+
+export function convertEndDateToISO(
+    endDate: string,
+    startDate: string
+): string {
+    const currentYear = new Date(startDate).getFullYear();
+
+    if (!endDate) return "";
+
+    if (/^[A-Za-z]{3}\s\d{1,2}$/.test(endDate)) {
+        const [month, day] = endDate.split(" ");
+        return new Date(`${month} ${day}, ${currentYear}`).toISOString();
+    }
+
+    return new Date(endDate).toISOString();
 }

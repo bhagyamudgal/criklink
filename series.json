@@ -1,0 +1,293 @@
+{
+  "apikey": "c1bfa91b-70b3-49f8-9a7a-3b4cf3afb938",
+  "data": [
+    {
+      "id": "d854d3d2-9260-455e-a0e6-21e3906e83f8",
+      "name": "England tour of Ireland, 2025",
+      "startDate": "2025-09-17",
+      "endDate": "Sep 21",
+      "odi": 3,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 3
+    },
+    {
+      "id": "f5dee348-f6f6-4d0d-b4f1-b78bbea2aca1",
+      "name": "South Africa tour of England, 2025",
+      "startDate": "2025-09-02",
+      "endDate": "Sep 14",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "40100bbd-49c9-40e5-87d5-92866692b620",
+      "name": "India Women tour of England, 2025",
+      "startDate": "2025-06-28",
+      "endDate": "Jul 22",
+      "odi": 3,
+      "t20": 5,
+      "test": 0,
+      "squads": 0,
+      "matches": 8
+    },
+    {
+      "id": "8f227d30-17ca-4b64-9896-90fb2521f78f",
+      "name": "India tour of England, 2025",
+      "startDate": "2025-06-20",
+      "endDate": "Aug 04",
+      "odi": 0,
+      "t20": 0,
+      "test": 5,
+      "squads": 0,
+      "matches": 5
+    },
+    {
+      "id": "f9e434f8-9aed-406b-88dd-15578c8a8427",
+      "name": "West Indies tour of England, 2025",
+      "startDate": "2025-05-29",
+      "endDate": "Jun 10",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "94111d98-0f1f-470f-88b6-e55e737d7be3",
+      "name": "West Indies Women tour of England, 2025",
+      "startDate": "2025-05-21",
+      "endDate": "Jun 06",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "e8ec36bd-ea3b-4bc6-b3de-890383e5be6e",
+      "name": "Australia Women tour of New Zealand, 2025",
+      "startDate": "2025-03-21",
+      "endDate": "Mar 26",
+      "odi": 0,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 3
+    },
+    {
+      "id": "8465598f-a097-4a0b-9c56-806c84ca7cce",
+      "name": "Pakistan tour of New Zealand, 2025",
+      "startDate": "2025-03-16",
+      "endDate": "Apr 25",
+      "odi": 3,
+      "t20": 5,
+      "test": 0,
+      "squads": 0,
+      "matches": 8
+    },
+    {
+      "id": "40b93362-48f6-444d-b8b9-6cb583b9788d",
+      "name": "Sri Lanka Women tour of New Zealand, 2025",
+      "startDate": "2025-03-04",
+      "endDate": "Mar 18",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "03532633-c83b-401a-aecb-99da710ae4fd",
+      "name": "CSA Provincial One-Day Challenge Division Two 2025",
+      "startDate": "2025-02-15",
+      "endDate": "Mar 14",
+      "odi": 29,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 29
+    },
+    {
+      "id": "c459a046-6e27-4499-8ee8-1915f783cf38",
+      "name": "CSA Provincial One-Day Challenge Division One 2025",
+      "startDate": "2025-02-15",
+      "endDate": "Mar 16",
+      "odi": 30,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 30
+    },
+    {
+      "id": "73d8a60c-dfa2-4814-a80a-378c92422b5a",
+      "name": "Pakistan ODI Tri-Series, 2025",
+      "startDate": "2025-02-08",
+      "endDate": "Feb 14",
+      "odi": 4,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 4
+    },
+    {
+      "id": "bf12ec10-a6e7-43b1-8cf6-6e2fcb4321f9",
+      "name": "England tour of India, 2025",
+      "startDate": "2025-01-22",
+      "endDate": "Feb 12",
+      "odi": 3,
+      "t20": 5,
+      "test": 0,
+      "squads": 0,
+      "matches": 8
+    },
+    {
+      "id": "94189858-8624-4e55-9904-1cbdb6c049cf",
+      "name": "ICC Under 19 Womens T20 World Cup 2025",
+      "startDate": "2025-01-18",
+      "endDate": "Feb 02",
+      "odi": 0,
+      "t20": 41,
+      "test": 0,
+      "squads": 0,
+      "matches": 41
+    },
+    {
+      "id": "0b624d70-0c55-40f1-89e9-f6086aa40813",
+      "name": "West Indies tour of Pakistan, 2025",
+      "startDate": "2025-01-16",
+      "endDate": "Jan 28",
+      "odi": 0,
+      "t20": 0,
+      "test": 2,
+      "squads": 0,
+      "matches": 2
+    },
+    {
+      "id": "c44fe6b1-9124-4c3b-b7a0-82acc9d98303",
+      "name": "Womens Ashes, 2025",
+      "startDate": "2025-01-12",
+      "endDate": "Jan 30",
+      "odi": 3,
+      "t20": 3,
+      "test": 1,
+      "squads": 0,
+      "matches": 7
+    },
+    {
+      "id": "c0bb686a-71d5-4f21-95cd-d049ccd53e9d",
+      "name": "Sri Lanka tour of New Zealand, 2024-25",
+      "startDate": "2024-12-28",
+      "endDate": "Jan 11",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "cb0cd980-79da-4ba6-a7d6-7453978082cc",
+      "name": "Australia Women tour of New Zealand, 2024",
+      "startDate": "2024-12-18",
+      "endDate": "Dec 23",
+      "odi": 3,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 3
+    },
+    {
+      "id": "eb78eb48-71e4-497a-b35b-4a852fb5a1f7",
+      "name": "Big Bash League 2024-25",
+      "startDate": "2024-12-15",
+      "endDate": "Jan 27",
+      "odi": 0,
+      "t20": 44,
+      "test": 0,
+      "squads": 0,
+      "matches": 44
+    },
+    {
+      "id": "e7684d03-74d9-429c-b7c3-421989f47818",
+      "name": "Pakistan tour of South Africa, 2024 -25",
+      "startDate": "2024-12-10",
+      "endDate": "Jan 07",
+      "odi": 3,
+      "t20": 3,
+      "test": 2,
+      "squads": 0,
+      "matches": 8
+    },
+    {
+      "id": "0a8cbca7-33bf-4a6c-9439-504302659455",
+      "name": "India Women tour of Australia, 2024",
+      "startDate": "2024-12-05",
+      "endDate": "Dec 11",
+      "odi": 3,
+      "t20": 0,
+      "test": 0,
+      "squads": 0,
+      "matches": 3
+    },
+    {
+      "id": "4469406c-f70a-48d6-bcb9-5c7947db686b",
+      "name": "England tour of New Zealand, 2024",
+      "startDate": "2024-11-27",
+      "endDate": "Dec 18",
+      "odi": 0,
+      "t20": 0,
+      "test": 3,
+      "squads": 0,
+      "matches": 3
+    },
+    {
+      "id": "50feeeb6-dbb3-4c3a-a746-58239528fc7d",
+      "name": "Sri Lanka tour of South Africa, 2024",
+      "startDate": "2024-11-27",
+      "endDate": "Dec 09",
+      "odi": 0,
+      "t20": 0,
+      "test": 2,
+      "squads": 0,
+      "matches": 2
+    },
+    {
+      "id": "a29f3fed-54e2-448f-acc1-83cd4b9072a2",
+      "name": "Pakistan tour of Zimbabwe, 2024",
+      "startDate": "2024-11-24",
+      "endDate": "Dec 05",
+      "odi": 3,
+      "t20": 3,
+      "test": 0,
+      "squads": 0,
+      "matches": 6
+    },
+    {
+      "id": "3b9c08a6-77ec-4554-918f-33a0ecd8df02",
+      "name": "England Women tour of South Africa, 2024",
+      "startDate": "2024-11-24",
+      "endDate": "Dec 18",
+      "odi": 3,
+      "t20": 3,
+      "test": 1,
+      "squads": 0,
+      "matches": 7
+    }
+  ],
+  "status": "success",
+  "info": {
+    "hitsToday": 10,
+    "hitsUsed": 1,
+    "hitsLimit": 100,
+    "credits": 0,
+    "server": 8,
+    "offsetRows": 0,
+    "totalRows": 627,
+    "queryTime": 46.6945,
+    "s": 0,
+    "cache": 0
+  }
+}

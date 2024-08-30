@@ -1,5 +1,5 @@
+import { webEnv } from "@/env/web";
 import { Connection } from "@solana/web3.js";
-import { env } from "./env";
 
 export function shortenWalletAddress(address: string, chars = 4) {
     if (address) {
@@ -10,5 +10,5 @@ export function shortenWalletAddress(address: string, chars = 4) {
 }
 
 export function getSolanaConnection() {
-    return new Connection(env.NEXT_PUBLIC_SOLANA_RPC_URL, "confirmed");
+    return new Connection(webEnv.NEXT_PUBLIC_SOLANA_RPC_URL, "confirmed");
 }
