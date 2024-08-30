@@ -8,4 +8,5 @@ export const redis = new Redis({
 
 export const REDIS_KEYS = {
     SERIES_INFO: (id: string) => `series_info:${id}`,
+    MATCH_INFO: (matchId: string) => `match_info:${matchId}`,
 } as const;

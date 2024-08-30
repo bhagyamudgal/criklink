@@ -13,6 +13,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as functions_matches_actions from "../functions/matches/actions.js";
 import type * as functions_matches_queries from "../functions/matches/queries.js";
 import type * as functions_series_actions from "../functions/series/actions.js";
 import type * as functions_series_mutations from "../functions/series/mutations.js";
@@ -28,6 +29,7 @@ import type * as functions_users_queries from "../functions/users/queries.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  "functions/matches/actions": typeof functions_matches_actions;
   "functions/matches/queries": typeof functions_matches_queries;
   "functions/series/actions": typeof functions_series_actions;
   "functions/series/mutations": typeof functions_series_mutations;

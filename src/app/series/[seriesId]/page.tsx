@@ -33,7 +33,30 @@ export default async function SeriesPage({ params }: Params) {
     let { matchList } = seriesInfo;
 
     matchList = matchList.sort((a, b) => {
-        return a.matchStarted ? 1 : b.matchStarted ? -1 : 0;
+        const now = new Date();
+        const aDate = new Date(a.dateTimeGMT);
+        const bDate = new Date(b.dateTimeGMT);
+
+        // Helper function to determine if a match is live
+        const isLive = (match: typeof a) =>
+            match.matchStarted &&
+            !match.matchEnded &&
+            new Date(match.dateTimeGMT) <= now;
+
+        // Upcoming matches first
+        if (!a.matchStarted && b.matchStarted) return -1;
+        if (a.matchStarted && !b.matchStarted) return 1;
+
+        // Then live matches
+        if (isLive(a) && !isLive(b)) return -1;
+        if (!isLive(a) && isLive(b)) return 1;
+
+        // Ended matches last
+        if (!a.matchEnded && b.matchEnded) return -1;
+        if (a.matchEnded && !b.matchEnded) return 1;
+
+        // For matches with the same status, sort by date
+        return aDate.getTime() - bDate.getTime();
     });
 
     return (
@@ -54,9 +77,9 @@ export default async function SeriesPage({ params }: Params) {
                 <div className="space-y-8">
                     <TypographyH2 className="text-center">Matches</TypographyH2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {matchList.map((match) => (
-                            <MatchCard key={match.id} match={match} />
-                        ))}
+                        {matchList.map((match) => {
+                            return <MatchCard key={match.id} match={match} />;
+                        })}
                     </div>
                 </div>
             </Container>

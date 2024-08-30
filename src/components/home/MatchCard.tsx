@@ -7,29 +7,15 @@ import { Match } from "@/types/cricket-data";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-function RenderMatchStatusBadge({ match }: { match: Match }) {
-    let variant: "default" | "secondary" | "destructive" = "secondary";
-    let text = "Upcoming";
-
-    if (match.matchStarted) {
-        variant = "default";
-        text = "Live";
-    }
-
-    if (match.matchEnded) {
-        variant = "destructive";
-        text = "Ended";
-    }
-
-    return <Badge variant={variant}>{text}</Badge>;
-}
+import { MatchStatusBadge } from "./MatchStatusBadge";
 
 export function MatchCard({ match }: { match: Match }) {
-    console.log({ match });
-
     if (!match?.teamInfo || match?.teamInfo?.length === 0) {
         return null;
+    }
+
+    if (new Date(match.dateTimeGMT) < new Date() && !match.matchEnded) {
+        match.matchEnded = true;
     }
 
     return (
@@ -39,7 +25,7 @@ export function MatchCard({ match }: { match: Match }) {
                     <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                             <span>{match.name}</span>
-                            <RenderMatchStatusBadge match={match} />
+                            <MatchStatusBadge match={match} />
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -72,10 +58,15 @@ export function MatchCard({ match }: { match: Match }) {
                                 {match.venue}
                             </div>
                         </div>
-                        <div className="mt-2 flex items-center justify-center">
+                        <div className="mt-2 flex items-center justify-center gap-2">
                             <Badge variant="outline" className="capitalize">
                                 {match.matchType}
                             </Badge>
+                            {match.matchEnded && match.status && (
+                                <Badge variant="secondary">
+                                    {match.status}
+                                </Badge>
+                            )}
                         </div>
                     </CardContent>
                 </Card>

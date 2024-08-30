@@ -40,6 +40,13 @@ class CricketDataService {
         );
         return response.json<CricketDataApiResponse<Match[]>>();
     }
+
+    async getMatchInfo(matchId: string) {
+        const response = await this.apiInstance.get(
+            `match_info?apikey=${this.apiKey}&id=${matchId}`
+        );
+        return response.json<CricketDataApiResponse<Match>>();
+    }
 }
 
 export const cricketDataService = new CricketDataService(
