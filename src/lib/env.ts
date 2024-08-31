@@ -21,6 +21,8 @@ export const apiEnvSchema = z.object({
     UPSTASH_REDIS_REST_TOKEN: z.string(),
     FRONTEND_URL: z.string().url(),
     SOLANA_RPC_URL: z.string().url(),
+    WALLET_PRIVATE_KEY: z.string(),
+    APP_SECRET: z.string(),
 });
 
 const ENV_CONFIG = {
@@ -33,6 +35,8 @@ const ENV_CONFIG = {
     UPSTASH_REDIS_REST_TOKEN: process.env["UPSTASH_REDIS_REST_TOKEN"],
     FRONTEND_URL: process.env["FRONTEND_URL"],
     SOLANA_RPC_URL: process.env["SOLANA_RPC_URL"],
+    WALLET_PRIVATE_KEY: process.env["WALLET_PRIVATE_KEY"],
+    APP_SECRET: process.env["APP_SECRET"],
 };
 
 export function parseEnv<T extends z.ZodRawShape>(envSchema: z.ZodObject<T>) {

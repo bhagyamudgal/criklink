@@ -1,21 +1,27 @@
 import { SUPPORTED_BETTING_TOKENS } from "@/constants/actions";
+import { BET_STATUS, BET_TX_STATUS } from "@/constants/bets";
+import { MATCH_WIN_DISTRIBUTION_STATUS } from "@/constants/matches";
 import { apiEnv } from "@/env/api";
+import { getSolanaConnection } from "@/lib/solana";
 import { extractErrorMessage, formatMatchDateTime } from "@/lib/utils";
 import { cricketDataService } from "@/services/cricket-data";
 import {
     ActionGetResponse,
     createPostResponse,
-    MEMO_PROGRAM_ID,
     type ActionPostRequest,
 } from "@solana/actions";
 import {
-    Connection,
-    PublicKey,
-    Transaction,
-    TransactionInstruction,
-} from "@solana/web3.js";
+    createTransfer,
+    encodeURL,
+    type CreateTransferFields,
+} from "@solana/pay";
+import { ComputeBudgetProgram, Keypair, PublicKey } from "@solana/web3.js";
 import Big from "big.js";
+import BigNumber from "bignumber.js";
+import bs58 from "bs58";
+import { fetchMutation, fetchQuery } from "convex/nextjs";
 import { NextResponse, type NextRequest } from "next/server";
+import { api } from "../../../../../../../convex/_generated/api";
 
 type Params = {
     params: {
@@ -132,11 +138,11 @@ export async function POST(req: NextRequest, { params }: Params) {
             return NextResponse.json({ error: "Amount is required!" });
         }
 
-        const tokenDetails = SUPPORTED_BETTING_TOKENS.find(
+        const selectedToken = SUPPORTED_BETTING_TOKENS.find(
             (t) => t.symbol === token
         );
 
-        if (!tokenDetails) {
+        if (!selectedToken) {
             return NextResponse.json({ error: "Invalid token!" });
         }
 
@@ -153,6 +159,46 @@ export async function POST(req: NextRequest, { params }: Params) {
         const accountPubkey = new PublicKey(account);
 
         const match = await cricketDataService.getMatchInfo(matchId);
+
+        const seriesInfo = await fetchQuery(
+            api.functions.series.queries.getSeriesBySeriesId,
+            {
+                seriesId: match.data.series_id,
+            }
+        );
+
+        if (!seriesInfo) {
+            throw new Error("Series info not found!");
+        }
+
+        const dbMatch = await fetchQuery(
+            api.functions.matches.queries.getMatchByMatchId,
+            {
+                matchId,
+                APP_SECRET: apiEnv.APP_SECRET,
+            }
+        );
+
+        let dbMatchId = dbMatch?._id;
+
+        if (!dbMatchId) {
+            dbMatchId = await fetchMutation(
+                api.functions.matches.mutations.createMatch,
+                {
+                    match: {
+                        matchId,
+                        seriesId: seriesInfo._id,
+                        winDistributionStatus:
+                            MATCH_WIN_DISTRIBUTION_STATUS.PENDING,
+                    },
+                    APP_SECRET: apiEnv.APP_SECRET,
+                }
+            );
+        }
+
+        if (!dbMatchId) {
+            throw new Error("Failed to find or create match!");
+        }
 
         const team1 = match.data.teamInfo?.[0] || {
             name: match.data.teams[0],
@@ -185,31 +231,96 @@ export async function POST(req: NextRequest, { params }: Params) {
             return NextResponse.json({ error: "Match already started!" });
         }
 
-        const memo = `Placing bet on ${selectedTeam.name} for ${amount} ${tokenDetails.symbol}`;
-
-        const tx = new Transaction().add(
-            new TransactionInstruction({
-                keys: [
-                    {
-                        pubkey: accountPubkey,
-                        isSigner: true,
-                        isWritable: true,
-                    },
-                ],
-                data: Buffer.from(memo, "utf-8"),
-                programId: new PublicKey(MEMO_PROGRAM_ID),
-            })
+        let user = await fetchQuery(
+            api.functions.users.queries.getUserByWallet,
+            {
+                wallet: accountPubkey.toBase58(),
+                APP_SECRET: apiEnv.APP_SECRET,
+            }
         );
+
+        if (!user) {
+            user = await fetchMutation(
+                api.functions.users.mutations.createNewUser,
+                {
+                    wallet: accountPubkey.toBase58(),
+                    APP_SECRET: apiEnv.APP_SECRET,
+                }
+            );
+        }
+
+        if (!user) {
+            throw new Error("Failed to find or create user!");
+        }
+
+        let connection = getSolanaConnection(apiEnv.SOLANA_RPC_URL);
+
+        const criklinkKeypair = Keypair.fromSecretKey(
+            bs58.decode(apiEnv.WALLET_PRIVATE_KEY)
+        );
+
+        const criklinkWallet = criklinkKeypair.publicKey;
+
+        const memo = `Match-Bet-${matchId}-Team-${selectedTeam.name}`;
+        const reference = new Keypair().publicKey;
+
+        const transferData = {
+            splToken: new PublicKey(selectedToken.address),
+            recipient: criklinkWallet,
+            amount: new BigNumber(amount.toString()),
+            memo,
+            reference,
+        } satisfies CreateTransferFields;
+
+        const solanaPayUrl = encodeURL(transferData).toString();
+
+        const tx = await createTransfer(
+            connection,
+            accountPubkey,
+            transferData
+        );
+
+        const priorityFee = await connection.getRecentPrioritizationFees();
+
+        const addPriorityFee = ComputeBudgetProgram.setComputeUnitPrice({
+            microLamports: priorityFee[0].prioritizationFee,
+        });
+
+        tx.add(addPriorityFee);
+
+        const betId = await fetchMutation(
+            api.functions.bets.mutations.createBet,
+            {
+                bet: {
+                    amount: amount.toNumber(),
+                    matchId: dbMatchId,
+                    teamName: selectedTeam.name,
+                    tokenMint: selectedToken.address,
+                    userId: user._id,
+                    solanaPayUrl,
+                    status: BET_STATUS.CREATED,
+                    txStatus: BET_TX_STATUS.PENDING,
+                    isPaidBack: false,
+                },
+                APP_SECRET: apiEnv.APP_SECRET,
+            }
+        );
+
+        if (!betId) {
+            throw new Error("Failed to create bet!");
+        }
 
         tx.feePayer = accountPubkey;
         tx.recentBlockhash = (
-            await new Connection(apiEnv.SOLANA_RPC_URL).getLatestBlockhash()
+            await getSolanaConnection(
+                apiEnv.SOLANA_RPC_URL
+            ).getLatestBlockhash()
         ).blockhash;
 
         const result = await createPostResponse({
             fields: {
                 transaction: tx,
-                message: "Transaction created successfully!",
+                message: "Bet placed successfully!",
             },
         });
 

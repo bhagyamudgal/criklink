@@ -1,9 +1,9 @@
 import { DB_TABLES } from "@/constants/db";
 import { checkAppSecret } from "@/lib/convex";
 import { v } from "convex/values";
-import { query } from "../../_generated/server";
+import { mutation } from "../../_generated/server";
 
-export const getUserByWallet = query({
+export const createNewUser = mutation({
     args: {
         wallet: DB_TABLES.USERS.doc.fields.wallet,
         APP_SECRET: v.string(),
@@ -11,10 +11,11 @@ export const getUserByWallet = query({
     handler: async (ctx, args) => {
         checkAppSecret(args.APP_SECRET);
 
-        const user = await ctx.db
-            .query(DB_TABLES.USERS.name)
-            .filter((q) => q.eq(q.field("wallet"), args.wallet))
-            .first();
+        const newUserId = await ctx.db.insert(DB_TABLES.USERS.name, {
+            wallet: args.wallet,
+        });
+
+        const user = await ctx.db.get(newUserId);
 
         return user;
     },

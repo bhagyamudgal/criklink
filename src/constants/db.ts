@@ -19,7 +19,25 @@ export const DB_TABLES = {
         matches: v.number(),
     }),
 
+    BETS: Table("bets", {
+        userId: v.id("users"),
+        matchId: v.id("matches"),
+        teamName: v.string(),
+        amount: v.float64(),
+        tokenMint: v.string(),
+        solanaPayUrl: v.string(),
+        txStatus: v.string(),
+        status: v.string(),
+        isPaidBack: v.boolean(),
+        paidBackAmount: v.optional(v.float64()),
+        paidBackAt: v.optional(v.number()),
+        paidBackTx: v.optional(v.string()),
+    }),
+
     MATCHES: Table("matches", {
-        name: v.string(),
+        matchId: v.string(),
+        seriesId: v.id("series"),
+        winnerTeam: v.optional(v.string()),
+        winDistributionStatus: v.string(),
     }),
 } as const;
