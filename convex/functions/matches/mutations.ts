@@ -1,7 +1,7 @@
 import { DB_TABLES } from "@/constants/db";
 import { checkAppSecret } from "@/lib/convex";
 import { v } from "convex/values";
-import { mutation } from "../../_generated/server";
+import { internalMutation, mutation } from "../../_generated/server";
 
 export const createMatch = mutation({
     args: {
@@ -14,5 +14,20 @@ export const createMatch = mutation({
         const matchId = await ctx.db.insert(DB_TABLES.MATCHES.name, args.match);
 
         return matchId;
+    },
+});
+
+export const updateMatch = internalMutation({
+    args: {
+        id: v.id(DB_TABLES.MATCHES.name),
+        data: v.object({
+            matchWinner: v.optional(DB_TABLES.MATCHES.doc.fields.winnerTeam),
+            winDistributionStatus: v.optional(
+                DB_TABLES.MATCHES.doc.fields.winDistributionStatus
+            ),
+        }),
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, args.data);
     },
 });

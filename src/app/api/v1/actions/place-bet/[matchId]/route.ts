@@ -2,6 +2,7 @@ import { SUPPORTED_BETTING_TOKENS } from "@/constants/actions";
 import { BET_STATUS, BET_TX_STATUS } from "@/constants/bets";
 import { MATCH_WIN_DISTRIBUTION_STATUS } from "@/constants/matches";
 import { apiEnv } from "@/env/api";
+import { getMatchTeams } from "@/lib/cricket-data";
 import { getSolanaConnection } from "@/lib/solana";
 import { extractErrorMessage, formatMatchDateTime } from "@/lib/utils";
 import { cricketDataService } from "@/services/cricket-data";
@@ -200,16 +201,7 @@ export async function POST(req: NextRequest, { params }: Params) {
             throw new Error("Failed to find or create match!");
         }
 
-        const team1 = match.data.teamInfo?.[0] || {
-            name: match.data.teams[0],
-            shortname: match.data.teams[0].substring(0, 3).toUpperCase(),
-            img: "",
-        };
-        const team2 = match.data.teamInfo?.[1] || {
-            name: match.data.teams[1],
-            shortname: match.data.teams[1].substring(0, 3).toUpperCase(),
-            img: "",
-        };
+        const { team1, team2 } = getMatchTeams(match.data);
 
         let selectedTeam: typeof team1;
 

@@ -1,5 +1,6 @@
-import { BET_TX_STATUS } from "@/constants/bets";
+import { BET_STATUS, BET_TX_STATUS } from "@/constants/bets";
 import { DB_TABLES } from "@/constants/db";
+import { v } from "convex/values";
 import { internalQuery } from "../../_generated/server";
 
 export const getBetById = internalQuery({
@@ -16,6 +17,79 @@ export const getAllPendingBets = internalQuery({
         return await ctx.db
             .query(DB_TABLES.BETS.name)
             .filter((q) => q.eq(q.field("txStatus"), BET_TX_STATUS.PENDING))
+            .collect();
+    },
+});
+
+export const getAllCreatedBetsByMatchId = internalQuery({
+    args: {
+        matchId: v.id(DB_TABLES.MATCHES.name),
+    },
+    handler: async (ctx, args) => {
+        return await ctx.db
+            .query(DB_TABLES.BETS.name)
+            .filter((q) =>
+                q.and(
+                    q.eq(q.field("matchId"), args.matchId),
+                    q.eq(q.field("status"), BET_STATUS.CREATED)
+                )
+            )
+            .withIndex("by_matchId")
+            .collect();
+    },
+});
+
+export const getAllWinningBetsByMatchId = internalQuery({
+    args: {
+        matchId: v.id(DB_TABLES.MATCHES.name),
+    },
+    handler: async (ctx, args) => {
+        return await ctx.db
+            .query(DB_TABLES.BETS.name)
+            .filter((q) =>
+                q.and(
+                    q.eq(q.field("matchId"), args.matchId),
+                    q.eq(q.field("status"), BET_STATUS.WON)
+                )
+            )
+            .withIndex("by_matchId")
+            .collect();
+    },
+});
+
+export const getAllUnpaidWinningBetsByMatchId = internalQuery({
+    args: {
+        matchId: v.id(DB_TABLES.MATCHES.name),
+    },
+    handler: async (ctx, args) => {
+        return await ctx.db
+            .query(DB_TABLES.BETS.name)
+            .filter((q) =>
+                q.and(
+                    q.eq(q.field("matchId"), args.matchId),
+                    q.eq(q.field("status"), BET_STATUS.WON),
+                    q.eq(q.field("isPaidBack"), false)
+                )
+            )
+            .withIndex("by_matchId")
+            .collect();
+    },
+});
+
+export const getAllLosingBetsByMatchId = internalQuery({
+    args: {
+        matchId: v.id(DB_TABLES.MATCHES.name),
+    },
+    handler: async (ctx, args) => {
+        return await ctx.db
+            .query(DB_TABLES.BETS.name)
+            .filter((q) =>
+                q.and(
+                    q.eq(q.field("matchId"), args.matchId),
+                    q.eq(q.field("status"), BET_STATUS.LOST)
+                )
+            )
+            .withIndex("by_matchId")
             .collect();
     },
 });

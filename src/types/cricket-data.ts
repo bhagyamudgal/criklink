@@ -29,6 +29,7 @@ export type Match = {
     hasSquad: boolean;
     matchStarted: boolean;
     matchEnded: boolean;
+    matchWinner?: string;
     score?: Score[]; // Keep this optional as it's not present in the JSON
 };
 

@@ -102,7 +102,6 @@ export const checkAndUpdateBetTxStatus = internalAction({
             }
         } catch (error) {
             console.error(error);
-            return null;
         }
     },
 });

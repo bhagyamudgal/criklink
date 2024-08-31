@@ -22,6 +22,13 @@ export const updateBet = internalMutation({
         id: v.id(DB_TABLES.BETS.name),
         data: v.object({
             txStatus: v.optional(DB_TABLES.BETS.doc.fields.txStatus),
+            status: v.optional(DB_TABLES.BETS.doc.fields.status),
+            paidBackAmount: v.optional(
+                DB_TABLES.BETS.doc.fields.paidBackAmount
+            ),
+            paidBackAt: v.optional(DB_TABLES.BETS.doc.fields.paidBackAt),
+            paidBackTx: v.optional(DB_TABLES.BETS.doc.fields.paidBackTx),
+            isPaidBack: v.optional(DB_TABLES.BETS.doc.fields.isPaidBack),
         }),
     },
     handler: async (ctx, args) => {

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { getMatchTeams } from "@/lib/cricket-data";
 import { extractErrorMessage, formatMatchDateTime } from "@/lib/utils";
 import { cricketDataService } from "@/services/cricket-data";
 import { redis, REDIS_KEYS } from "@/services/redis";
@@ -37,16 +38,7 @@ export async function GET(
 
         console.log("Generating image response");
 
-        const team1 = matchInfo.teamInfo?.[0] || {
-            name: matchInfo.teams[0],
-            shortname: matchInfo.teams[0].substring(0, 3).toUpperCase(),
-            img: "",
-        };
-        const team2 = matchInfo.teamInfo?.[1] || {
-            name: matchInfo.teams[1],
-            shortname: matchInfo.teams[1].substring(0, 3).toUpperCase(),
-            img: "",
-        };
+        const { team1, team2 } = getMatchTeams(matchInfo);
 
         const imageResponse = new ImageResponse(
             (
