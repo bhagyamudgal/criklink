@@ -49,7 +49,8 @@ export const getAllWinningBetsByMatchId = internalQuery({
             .filter((q) =>
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
-                    q.eq(q.field("status"), BET_STATUS.WON)
+                    q.eq(q.field("status"), BET_STATUS.WON),
+                    q.eq(q.field("txStatus"), BET_TX_STATUS.SUCCESS)
                 )
             )
             .withIndex("by_matchId")
@@ -68,6 +69,7 @@ export const getAllUnpaidWinningBetsByMatchId = internalQuery({
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
                     q.eq(q.field("status"), BET_STATUS.WON),
+                    q.eq(q.field("txStatus"), BET_TX_STATUS.SUCCESS),
                     q.eq(q.field("isPaidBack"), false)
                 )
             )
