@@ -16,7 +16,7 @@ export async function GET(
     try {
         let { matchId } = params;
 
-        matchId = matchId.replace(".png", "");
+        matchId = matchId.split(".")[0];
         console.log(`Fetching match info for matchId: ${matchId}`);
 
         let matchInfo = (await redis.get(
@@ -183,7 +183,7 @@ export async function GET(
 
         const arrayBuffer = await imageResponse.arrayBuffer();
 
-        return new Response(arrayBuffer, {
+        return new NextResponse(arrayBuffer, {
             headers: {
                 "Content-Type": "image/png",
                 "Cache-Control": "public, max-age=43200, s-maxage=43200",

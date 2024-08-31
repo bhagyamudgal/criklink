@@ -52,11 +52,11 @@ export async function GET(req: NextRequest, { params }: Params) {
 
         const result = {
             icon: `${apiEnv.FRONTEND_URL}/og/match/${matchId}.png`,
-            description: `Place a bet on ${team1.name} or ${team2.name}\n\n${formatMatchDateTime(
+            description: `${team1.name} vs ${team2.name}\n\n${match.data.venue}\n\n${formatMatchDateTime(
                 match.data.date
-            )}\n\n${match.data.venue}`,
+            )}\n\n${match.data.matchType.toUpperCase()} match`,
             label,
-            title: `${team1.name} vs ${team2.name}`,
+            title: `Place a bet on ${team1.name} vs ${team2.name} match`,
             disabled: isStarted,
             links: {
                 actions: [
@@ -90,6 +90,7 @@ export async function GET(req: NextRequest, { params }: Params) {
                                         return {
                                             label: token.symbol,
                                             value: token.symbol,
+                                            selected: true,
                                         };
                                     }
                                 ),
