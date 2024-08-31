@@ -9,6 +9,15 @@ const nextConfig = {
             },
         ],
     },
+
+    async rewrites() {
+        return [
+            {
+                source: "/og/match/:matchId",
+                destination: "/api/v1/og/match/:matchId",
+            },
+        ];
+    },
 };
 
 export default nextConfig;

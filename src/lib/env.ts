@@ -22,6 +22,8 @@ export const apiEnvSchema = z.object({
     CRICKET_DATA_API_KEY: z.string(),
     UPSTASH_REDIS_REST_URL: z.string().url(),
     UPSTASH_REDIS_REST_TOKEN: z.string(),
+    FRONTEND_URL: z.string().url(),
+    SOLANA_RPC_URL: z.string().url(),
 });
 
 const ENV_CONFIG = {
@@ -32,6 +34,8 @@ const ENV_CONFIG = {
     CRICKET_DATA_API_KEY: process.env["CRICKET_DATA_API_KEY"],
     UPSTASH_REDIS_REST_URL: process.env["UPSTASH_REDIS_REST_URL"],
     UPSTASH_REDIS_REST_TOKEN: process.env["UPSTASH_REDIS_REST_TOKEN"],
+    FRONTEND_URL: process.env["FRONTEND_URL"],
+    SOLANA_RPC_URL: process.env["SOLANA_RPC_URL"],
 };
 
 export function parseEnv<T extends z.ZodRawShape>(envSchema: z.ZodObject<T>) {
