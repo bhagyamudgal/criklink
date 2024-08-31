@@ -1,5 +1,6 @@
 import { Center } from "@/components/common/Center";
 import { Container } from "@/components/common/Container";
+import { MatchBlink } from "@/components/home/MatchBlink";
 import { MatchStatusBadge } from "@/components/home/MatchStatusBadge";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -112,6 +113,8 @@ export default async function MatchPage({ params }: Params) {
                         </div>
                     </CardContent>
                 </Card>
+
+                {!matchInfo.matchStarted && <MatchBlink match={matchInfo} />}
             </Container>
         </main>
     );

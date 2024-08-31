@@ -15,6 +15,7 @@ export const webEnvSchema = z.object({
     ]),
     NEXT_PUBLIC_SOLANA_RPC_URL: z.string().url(),
     NEXT_PUBLIC_CONVEX_URL: z.string().url(),
+    NEXT_PUBLIC_API_URL: z.string().url(),
 });
 
 export const apiEnvSchema = z.object({
@@ -31,6 +32,7 @@ const ENV_CONFIG = {
     NEXT_PUBLIC_SOLANA_NETWORK: process.env["NEXT_PUBLIC_SOLANA_NETWORK"],
     NEXT_PUBLIC_SOLANA_RPC_URL: process.env["NEXT_PUBLIC_SOLANA_RPC_URL"],
     NEXT_PUBLIC_CONVEX_URL: process.env["NEXT_PUBLIC_CONVEX_URL"],
+    NEXT_PUBLIC_API_URL: process.env["NEXT_PUBLIC_API_URL"],
     CRICKET_DATA_API_KEY: process.env["CRICKET_DATA_API_KEY"],
     UPSTASH_REDIS_REST_URL: process.env["UPSTASH_REDIS_REST_URL"],
     UPSTASH_REDIS_REST_TOKEN: process.env["UPSTASH_REDIS_REST_TOKEN"],

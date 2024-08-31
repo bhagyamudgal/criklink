@@ -51,7 +51,7 @@ export async function GET(req: NextRequest, { params }: Params) {
             : "Place Bet";
 
         const result = {
-            icon: `${apiEnv.FRONTEND_URL}/og/match/${matchId}`,
+            icon: `${apiEnv.FRONTEND_URL}/og/match/${matchId}.png`,
             description: `Place a bet on ${team1.name} or ${team2.name}\n\n${formatMatchDateTime(
                 match.data.date
             )}\n\n${match.data.venue}`,

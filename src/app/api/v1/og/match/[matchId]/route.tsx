@@ -14,7 +14,9 @@ export async function GET(
     { params }: { params: { matchId: string } }
 ) {
     try {
-        const { matchId } = params;
+        let { matchId } = params;
+
+        matchId = matchId.replace(".png", "");
         console.log(`Fetching match info for matchId: ${matchId}`);
 
         let matchInfo = (await redis.get(
