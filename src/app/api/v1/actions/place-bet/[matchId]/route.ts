@@ -108,7 +108,8 @@ export async function GET(req: NextRequest, { params }: Params) {
 
         return NextResponse.json(result);
     } catch (error) {
-        return NextResponse.json({ error: extractErrorMessage(error) });
+        console.error("error =>", extractErrorMessage(error));
+        return NextResponse.json({ error: "Internal server error!" });
     }
 }
 
@@ -214,6 +215,6 @@ export async function POST(req: NextRequest, { params }: Params) {
         return NextResponse.json(result);
     } catch (error) {
         console.error("error =>", extractErrorMessage(error));
-        return NextResponse.json({ error: extractErrorMessage(error) });
+        return NextResponse.json({ error: "Internal server error!" });
     }
 }
