@@ -56,7 +56,7 @@ export async function GET(req: NextRequest, { params }: Params) {
                 match.data.date
             )}\n\n${match.data.matchType.toUpperCase()} match`,
             label,
-            title: `Place a bet on ${team1.name} vs ${team2.name} match`,
+            title: `Place a bet on ${match.data.name}`,
             disabled: isStarted,
             links: {
                 actions: [
