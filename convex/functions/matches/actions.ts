@@ -1,6 +1,6 @@
 "use node";
 
-import { BET_STATUS } from "@/constants/bets";
+import { BET_STATUS, BET_TX_STATUS } from "@/constants/bets";
 import { MATCH_WIN_DISTRIBUTION_STATUS } from "@/constants/matches";
 import { apiEnv } from "@/env/api";
 import { getMatchWinningTeam } from "@/lib/cricket-data";
@@ -148,6 +148,25 @@ export const checkAndUpdateBetWinningStatus = internalAction({
                     for (const bet of createdBets) {
                         try {
                             console.log("Bet =>", bet);
+
+                            if (bet.txStatus === BET_TX_STATUS.PENDING) {
+                                await ctx.runMutation(
+                                    internal.functions.bets.mutations.updateBet,
+                                    {
+                                        id: bet._id,
+                                        data: {
+                                            txStatus: BET_TX_STATUS.FAILED,
+                                        },
+                                    }
+                                );
+
+                                console.log(
+                                    "Bet marked as failed as tx was pending!",
+                                    bet
+                                );
+
+                                continue;
+                            }
 
                             const winningTeam = match.winnerTeam;
 
