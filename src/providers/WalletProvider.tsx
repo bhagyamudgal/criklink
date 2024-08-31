@@ -1,5 +1,4 @@
 import { WalletNotification } from "@/components/wallet/WalletNotification";
-import { webEnv } from "@/env/web";
 
 import { UnifiedWalletProvider } from "@jup-ag/wallet-adapter";
 import React, { useMemo } from "react";
@@ -14,7 +13,7 @@ export function WalletProvider({ children }: WalletProvider) {
             wallets={wallets}
             config={{
                 autoConnect: true,
-                env: webEnv.NEXT_PUBLIC_SOLANA_NETWORK,
+                env: "mainnet-beta",
                 metadata: {
                     name: "UnifiedWallet",
                     description: "UnifiedWallet",

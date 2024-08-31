@@ -7,16 +7,15 @@ export default async function middleware(req: NextRequest) {
 
     const actionHeaders = createActionHeaders({
         chainId: "mainnet",
+        headers: ACTIONS_CORS_HEADERS,
     });
 
     if (req.url.includes("actions")) {
-        Object.keys({ ...ACTIONS_CORS_HEADERS, ...actionHeaders }).forEach(
-            (key) => {
-                const value = ACTIONS_CORS_HEADERS[key];
+        Object.keys(actionHeaders).forEach((key) => {
+            const value = actionHeaders[key];
 
-                res.headers.append(key, value);
-            }
-        );
+            res.headers.append(key, value);
+        });
     }
 
     return res;

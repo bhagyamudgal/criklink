@@ -9,10 +9,6 @@ export const webEnvSchema = z.object({
         ])
         .optional()
         .default("development"),
-    NEXT_PUBLIC_SOLANA_NETWORK: z.union([
-        z.literal("devnet"),
-        z.literal("mainnet-beta"),
-    ]),
     NEXT_PUBLIC_SOLANA_RPC_URL: z.string().url(),
     NEXT_PUBLIC_CONVEX_URL: z.string().url(),
     NEXT_PUBLIC_API_URL: z.string().url(),
@@ -29,7 +25,6 @@ export const apiEnvSchema = z.object({
 
 const ENV_CONFIG = {
     NEXT_PUBLIC_VERCEL_ENV: process.env["NEXT_PUBLIC_VERCEL_ENV"],
-    NEXT_PUBLIC_SOLANA_NETWORK: process.env["NEXT_PUBLIC_SOLANA_NETWORK"],
     NEXT_PUBLIC_SOLANA_RPC_URL: process.env["NEXT_PUBLIC_SOLANA_RPC_URL"],
     NEXT_PUBLIC_CONVEX_URL: process.env["NEXT_PUBLIC_CONVEX_URL"],
     NEXT_PUBLIC_API_URL: process.env["NEXT_PUBLIC_API_URL"],
