@@ -7,11 +7,14 @@ import { extractErrorMessage } from "@/lib/utils";
 import type { Match } from "@/types/cricket-data";
 import { Action, Blink } from "@dialectlabs/blinks";
 import { useActionSolanaWalletAdapter } from "@dialectlabs/blinks/hooks/solana";
+import { useWallet } from "@solana/wallet-adapter-react";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Center } from "../common/Center";
 
 export function MatchBlink({ match }: { match: Match }) {
+    const { connected } = useWallet();
+
     const actionApiUrl = `${webEnv.NEXT_PUBLIC_API_URL}/actions/place-bet/${match.id}`;
 
     const { adapter } = useActionSolanaWalletAdapter(
@@ -35,7 +38,7 @@ export function MatchBlink({ match }: { match: Match }) {
         } finally {
             setIsLoading(false);
         }
-    }, [actionApiUrl, adapter]);
+    }, [actionApiUrl, adapter, connected]);
 
     if (isLoading) {
         return (
@@ -48,6 +51,16 @@ export function MatchBlink({ match }: { match: Match }) {
 
     if (error) {
         return <p>Failed to load Blink: {error}</p>;
+    }
+
+    if (!connected) {
+        return (
+            <Center>
+                <p className="text-lg text-white">
+                    Connect your wallet to place a bet!
+                </p>
+            </Center>
+        );
     }
 
     return action ? (
