@@ -1,7 +1,4 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
-    "cSpell.words": [
-        "criklink",
-        "lucide"
-    ]
+    "cSpell.words": ["BLINKSIGHT", "criklink", "lucide"]
 }

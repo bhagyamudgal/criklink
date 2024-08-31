@@ -5,6 +5,7 @@ import { apiEnv } from "@/env/api";
 import { getMatchTeams } from "@/lib/cricket-data";
 import { getSolanaConnection } from "@/lib/solana";
 import { extractErrorMessage, formatMatchDateTime } from "@/lib/utils";
+import { blinksightClient } from "@/services/blinksight";
 import { cricketDataService } from "@/services/cricket-data";
 import {
     ActionGetResponse,
@@ -114,7 +115,18 @@ export async function GET(req: NextRequest, { params }: Params) {
             },
         } satisfies ActionGetResponse;
 
-        return NextResponse.json(result);
+        let payload;
+
+        try {
+            payload = await blinksightClient.createActionGetResponseV1(
+                req.url,
+                result
+            );
+        } catch (error) {
+            payload = result;
+        }
+
+        return NextResponse.json(payload);
     } catch (error) {
         console.error("error =>", extractErrorMessage(error));
         return NextResponse.json({ error: "Internal server error!" });
@@ -152,6 +164,12 @@ export async function POST(req: NextRequest, { params }: Params) {
         const body = (await req.json()) as ActionPostRequest;
 
         const { account } = body;
+
+        try {
+            await blinksightClient.trackActionV2(account, req.url);
+        } catch (error) {
+            console.error("error =>", extractErrorMessage(error));
+        }
 
         if (!account) {
             return NextResponse.json({ error: "Account not found!" });

@@ -23,6 +23,7 @@ export const apiEnvSchema = z.object({
     SOLANA_RPC_URL: z.string().url(),
     WALLET_PRIVATE_KEY: z.string(),
     APP_SECRET: z.string(),
+    BLINKSIGHT_API_KEY: z.string(),
 });
 
 const ENV_CONFIG = {
@@ -37,6 +38,7 @@ const ENV_CONFIG = {
     SOLANA_RPC_URL: process.env["SOLANA_RPC_URL"],
     WALLET_PRIVATE_KEY: process.env["WALLET_PRIVATE_KEY"],
     APP_SECRET: process.env["APP_SECRET"],
+    BLINKSIGHT_API_KEY: process.env["BLINKSIGHT_API_KEY"],
 };
 
 export function parseEnv<T extends z.ZodRawShape>(envSchema: z.ZodObject<T>) {
