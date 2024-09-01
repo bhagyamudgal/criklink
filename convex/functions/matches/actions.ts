@@ -110,7 +110,8 @@ export const checkAndUpdateMatchWinnerAndStatus = internalAction({
                     }
                 } catch (error) {
                     console.error(
-                        `Failed to update match winner and status: ${match.matchId}`
+                        `Failed to update match winner and status: ${match.matchId}`,
+                        error
                     );
                 }
             }
@@ -202,13 +203,15 @@ export const checkAndUpdateBetWinningStatus = internalAction({
                             }
                         } catch (error) {
                             console.error(
-                                `Failed to update bet winning status: ${bet._id}`
+                                `Failed to update bet winning status: ${bet._id}`,
+                                error
                             );
                         }
                     }
                 } catch (error) {
                     console.error(
-                        `Failed to update bet winning status: ${match._id}`
+                        `Failed to update bet winning status: ${match._id}`,
+                        error
                     );
                 }
             }
