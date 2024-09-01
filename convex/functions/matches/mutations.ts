@@ -21,13 +21,19 @@ export const updateMatch = internalMutation({
     args: {
         id: v.id(DB_TABLES.MATCHES.name),
         data: v.object({
-            matchWinner: v.optional(DB_TABLES.MATCHES.doc.fields.winnerTeam),
+            winnerTeam: v.optional(DB_TABLES.MATCHES.doc.fields.winnerTeam),
             winDistributionStatus: v.optional(
                 DB_TABLES.MATCHES.doc.fields.winDistributionStatus
             ),
         }),
     },
     handler: async (ctx, args) => {
-        await ctx.db.patch(args.id, args.data);
+        try {
+            console.log("Mutation data =>", args.data);
+            await ctx.db.patch(args.id, args.data);
+        } catch (error) {
+            console.error("updateMatch error =>", error);
+            throw error;
+        }
     },
 });

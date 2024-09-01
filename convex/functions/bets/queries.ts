@@ -28,13 +28,13 @@ export const getAllCreatedBetsByMatchId = internalQuery({
     handler: async (ctx, args) => {
         return await ctx.db
             .query(DB_TABLES.BETS.name)
+            .withIndex("by_matchId")
             .filter((q) =>
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
                     q.eq(q.field("status"), BET_STATUS.CREATED)
                 )
             )
-            .withIndex("by_matchId")
             .collect();
     },
 });
@@ -46,6 +46,7 @@ export const getAllWinningBetsByMatchId = internalQuery({
     handler: async (ctx, args) => {
         return await ctx.db
             .query(DB_TABLES.BETS.name)
+            .withIndex("by_matchId")
             .filter((q) =>
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
@@ -53,7 +54,7 @@ export const getAllWinningBetsByMatchId = internalQuery({
                     q.eq(q.field("txStatus"), BET_TX_STATUS.SUCCESS)
                 )
             )
-            .withIndex("by_matchId")
+
             .collect();
     },
 });
@@ -65,6 +66,7 @@ export const getAllUnpaidWinningBetsByMatchId = internalQuery({
     handler: async (ctx, args) => {
         return await ctx.db
             .query(DB_TABLES.BETS.name)
+            .withIndex("by_matchId")
             .filter((q) =>
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
@@ -73,7 +75,7 @@ export const getAllUnpaidWinningBetsByMatchId = internalQuery({
                     q.eq(q.field("isPaidBack"), false)
                 )
             )
-            .withIndex("by_matchId")
+
             .collect();
     },
 });
@@ -85,13 +87,13 @@ export const getAllLosingBetsByMatchId = internalQuery({
     handler: async (ctx, args) => {
         return await ctx.db
             .query(DB_TABLES.BETS.name)
+            .withIndex("by_matchId")
             .filter((q) =>
                 q.and(
                     q.eq(q.field("matchId"), args.matchId),
                     q.eq(q.field("status"), BET_STATUS.LOST)
                 )
             )
-            .withIndex("by_matchId")
             .collect();
     },
 });

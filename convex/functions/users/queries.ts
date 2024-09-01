@@ -19,3 +19,17 @@ export const getUserByWallet = query({
         return user;
     },
 });
+
+export const getUserById = query({
+    args: {
+        id: v.id(DB_TABLES.USERS.name),
+        APP_SECRET: v.string(),
+    },
+    handler: async (ctx, args) => {
+        checkAppSecret(args.APP_SECRET);
+
+        const user = await ctx.db.get(args.id);
+
+        return user;
+    },
+});

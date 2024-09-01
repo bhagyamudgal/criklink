@@ -96,12 +96,14 @@ export const checkAndUpdateMatchWinnerAndStatus = internalAction({
                             );
                         }
 
+                        console.log("winning team =>", winningTeam);
+
                         await ctx.runMutation(
                             internal.functions.matches.mutations.updateMatch,
                             {
                                 id: match._id,
                                 data: {
-                                    matchWinner: winningTeam.name,
+                                    winnerTeam: winningTeam.name,
                                     winDistributionStatus:
                                         MATCH_WIN_DISTRIBUTION_STATUS.STARTED,
                                 },
@@ -113,6 +115,8 @@ export const checkAndUpdateMatchWinnerAndStatus = internalAction({
                         `Failed to update match winner and status: ${match.matchId}`,
                         error
                     );
+
+                    throw error;
                 }
             }
         } catch (error) {
@@ -378,9 +382,9 @@ export const distributeUnpaidWinningBetsForCompletedMatches = internalAction({
                                     criklinkKeypair.publicKey;
 
                                 const user = await ctx.runQuery(
-                                    api.functions.users.queries.getUserByWallet,
+                                    api.functions.users.queries.getUserById,
                                     {
-                                        wallet: bet.userId,
+                                        id: bet.userId,
                                         APP_SECRET: apiEnv.APP_SECRET,
                                     }
                                 );
