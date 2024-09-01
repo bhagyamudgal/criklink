@@ -83,6 +83,9 @@ importers:
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
+      date-fns-tz:
+        specifier: ^3.1.3
+        version: 3.1.3(date-fns@3.6.0)
       ky:
         specifier: ^1.7.1
         version: 1.7.1
@@ -113,6 +116,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.10)
+      usehooks-ts:
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.3.1)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -3408,6 +3414,11 @@ packages:
     resolution: {integrity: sha512-t/Ygsytq+R995EJ5PZlD4Cu56sWa8InXySaViRzw9apusqsOO2bQP+SbYzAhR0pFKoB+43lYy8rWban9JSuXnA==}
     engines: {node: '>= 0.4'}
 
+  date-fns-tz@3.1.3:
+    resolution: {integrity: sha512-ZfbMu+nbzW0mEzC8VZrLiSWvUIaI3aRHeq33mTe7Y38UctKukgqPR4nTDwcwS4d64Gf8GghnVsroBuMY3eiTeA==}
+    peerDependencies:
+      date-fns: ^3.0.0
+
   date-fns@3.6.0:
     resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
 
@@ -6251,6 +6262,12 @@ packages:
   usb@2.13.0:
     resolution: {integrity: sha512-pTNKyxD1DfC1DYu8kFcIdpE8f33e0c2Sbmmi0HEs28HTVC555uocvYR1g5DDv4CBibacCh4BqRyYZJylN4mBbw==}
     engines: {node: '>=12.22.0 <13.0 || >=14.17.0'}
+
+  usehooks-ts@3.1.0:
+    resolution: {integrity: sha512-bBIa7yUyPhE1BCc0GmR96VU/15l/9gP1Ch5mYdLcFBaFGQsdmXkvjV0TtOqW1yUd6VjIwDunm+flSciCQXujiw==}
+    engines: {node: '>=16.15.0'}
+    peerDependencies:
+      react: ^16.8.0  || ^17 || ^18
 
   utf-8-validate@5.0.10:
     resolution: {integrity: sha512-Z6czzLq4u8fPOyx7TU6X3dvUZVvoJmxSQ+IcrlmagKhilxlhZgxPK6C5Jqbkw1IDUmFTM+cz9QDnnLTwDz/2gQ==}
@@ -10901,6 +10918,10 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.1
 
+  date-fns-tz@3.1.3(date-fns@3.6.0):
+    dependencies:
+      date-fns: 3.6.0
+
   date-fns@3.6.0: {}
 
   dayjs@1.11.11: {}
@@ -14198,6 +14219,11 @@ snapshots:
       '@types/w3c-web-usb': 1.0.10
       node-addon-api: 8.1.0
       node-gyp-build: 4.8.1
+
+  usehooks-ts@3.1.0(react@18.3.1):
+    dependencies:
+      lodash.debounce: 4.0.8
+      react: 18.3.1
 
   utf-8-validate@5.0.10:
     dependencies:

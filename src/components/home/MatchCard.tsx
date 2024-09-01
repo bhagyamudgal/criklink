@@ -4,13 +4,16 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatMatchDateTime } from "@/lib/utils";
 import { Match } from "@/types/cricket-data";
-import { CalendarIcon, MapPinIcon } from "lucide-react";
+import { CalendarIcon, Loader, MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useIsClient } from "usehooks-ts";
 import { Center } from "../common/Center";
 import { MatchStatusBadge } from "./MatchStatusBadge";
 
 export function MatchCard({ match }: { match: Match }) {
+    const isClient = useIsClient();
+
     if (!match?.teamInfo || match?.teamInfo?.length === 0) {
         return null;
     }
@@ -53,7 +56,11 @@ export function MatchCard({ match }: { match: Match }) {
                         <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
                             <div className="flex items-center">
                                 <CalendarIcon className="w-4 h-4 mr-1" />
-                                {formatMatchDateTime(match.dateTimeGMT)}
+                                {isClient ? (
+                                    formatMatchDateTime(match.dateTimeGMT)
+                                ) : (
+                                    <Loader className="w-4 h-4 animate-spin" />
+                                )}
                             </div>
                             <div className="flex items-center">
                                 <MapPinIcon className="w-4 h-4 mr-1" />

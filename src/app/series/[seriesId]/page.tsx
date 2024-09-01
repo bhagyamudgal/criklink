@@ -59,6 +59,11 @@ export default async function SeriesPage({ params }: Params) {
         return aDate.getTime() - bDate.getTime();
     });
 
+    matchList = matchList.map((match) => {
+        match.dateTimeGMT = new Date(match.dateTimeGMT).toUTCString();
+        return match;
+    });
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             <Container id="series" className="space-y-12 py-12">

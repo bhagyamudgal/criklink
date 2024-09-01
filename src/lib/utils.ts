@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -33,7 +34,11 @@ export function formatSeriesDate(startDate: string, endDate: string) {
 }
 
 export function formatMatchDateTime(dateTimeGMT: string) {
-    return format(new Date(dateTimeGMT), "yyyy, MMM d p");
+    const date = new Date(dateTimeGMT);
+
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    return formatInTimeZone(date, userTimeZone, "yyyy, MMM d p zz");
 }
 
 export function convertEndDateToISO(
