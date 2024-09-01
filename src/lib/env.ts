@@ -12,6 +12,7 @@ export const webEnvSchema = z.object({
     NEXT_PUBLIC_SOLANA_RPC_URL: z.string().url(),
     NEXT_PUBLIC_CONVEX_URL: z.string().url(),
     NEXT_PUBLIC_API_URL: z.string().url(),
+    NEXT_PUBLIC_POSTHOG_KEY: z.string(),
 });
 
 export const apiEnvSchema = z.object({
@@ -39,6 +40,7 @@ const ENV_CONFIG = {
     WALLET_PRIVATE_KEY: process.env["WALLET_PRIVATE_KEY"],
     APP_SECRET: process.env["APP_SECRET"],
     BLINKSIGHT_API_KEY: process.env["BLINKSIGHT_API_KEY"],
+    NEXT_PUBLIC_POSTHOG_KEY: process.env["NEXT_PUBLIC_POSTHOG_KEY"],
 };
 
 export function parseEnv<T extends z.ZodRawShape>(envSchema: z.ZodObject<T>) {
