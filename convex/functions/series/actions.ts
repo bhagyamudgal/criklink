@@ -217,8 +217,7 @@ export const getSeriesInfo = action({
             REDIS_KEYS.SERIES_INFO(series._id),
             JSON.stringify(seriesInfoResponse.data),
             {
-                nx: true,
-                ex: 60 * 60, // 1 hour in seconds
+                ex: 60 * 5, // 5 minutes
             }
         );
 

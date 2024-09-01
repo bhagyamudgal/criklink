@@ -45,7 +45,6 @@ export const getMatchInfo = action({
             REDIS_KEYS.MATCH_INFO(args.matchId),
             JSON.stringify(matchInfoResponse.data),
             {
-                nx: true,
                 ex: 60 * 5, // 5 minutes in seconds
             }
         );
