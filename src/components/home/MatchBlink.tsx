@@ -67,9 +67,10 @@ export function MatchBlink({ match }: { match: Match }) {
         <Center>
             <div className="w-full max-w-[500px]">
                 <Blink
+                    websiteUrl="https://crik.link"
                     action={action}
                     stylePreset="x-dark"
-                    websiteText={new URL(actionApiUrl).hostname}
+                    websiteText="crik.link"
                 />
             </div>
         </Center>
