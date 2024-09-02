@@ -18,25 +18,20 @@ export async function GET(
         let { matchId } = params;
 
         matchId = matchId.split(".")[0];
-        console.log(`Fetching match info for matchId: ${matchId}`);
 
         let matchInfo = (await redis.get(
             REDIS_KEYS.MATCH_INFO(matchId)
         )) as Match | null;
 
         if (!matchInfo) {
-            console.log("Match info not found in Redis, fetching from API");
             const matchInfoResponse =
                 await cricketDataService.getMatchInfo(matchId);
             matchInfo = matchInfoResponse.data;
         }
 
         if (!matchInfo) {
-            console.log("Match not found");
             return new Response("Match not found", { status: 404 });
         }
-
-        console.log("Generating image response");
 
         const { team1, team2 } = getMatchTeams(matchInfo);
 
@@ -170,8 +165,6 @@ export async function GET(
                 height: 450,
             }
         );
-
-        console.log("Image response generated successfully");
 
         const arrayBuffer = await imageResponse.arrayBuffer();
 

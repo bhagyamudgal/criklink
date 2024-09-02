@@ -35,7 +35,7 @@ export function MatchBlink({ match }: { match: Match }) {
                 setAction(action);
             });
         } catch (error) {
-            console.log("action fetching error =>", error);
+            console.error("action fetching error =>", error);
             setError(extractErrorMessage(error));
         } finally {
             setIsLoading(false);

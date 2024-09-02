@@ -67,7 +67,5 @@ export default async function MatchPage({ params }: Params) {
 
     matchInfo.dateTimeGMT = new Date(matchInfo.dateTimeGMT).toUTCString();
 
-    console.log({ matchInfo });
-
     return <MatchDisplay matchInfo={matchInfo} />;
 }

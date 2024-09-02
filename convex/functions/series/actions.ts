@@ -7,7 +7,7 @@ import { v } from "convex/values";
 import { api, internal } from "../../_generated/api";
 import { action, internalAction } from "../../_generated/server";
 
-export const getAndSaveMatches = internalAction({
+export const getAndSaveSeries = internalAction({
     handler: async (ctx) => {
         const response = await cricketDataService.getAllSeries();
         const totalRows = response.info.totalRows;

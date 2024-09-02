@@ -29,7 +29,6 @@ export const updateMatch = internalMutation({
     },
     handler: async (ctx, args) => {
         try {
-            console.log("Mutation data =>", args.data);
             await ctx.db.patch(args.id, args.data);
         } catch (error) {
             console.error("updateMatch error =>", error);
