@@ -5,7 +5,7 @@ import "@dialectlabs/blinks/index.css";
 import { webEnv } from "@/env/web";
 import { extractErrorMessage } from "@/lib/utils";
 import type { Match } from "@/types/cricket-data";
-import { Action, Blink } from "@dialectlabs/blinks";
+import { Action, Blink, useActionsRegistryInterval } from "@dialectlabs/blinks";
 import { useActionSolanaWalletAdapter } from "@dialectlabs/blinks/hooks/solana";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Loader2 } from "lucide-react";
@@ -24,6 +24,8 @@ export function MatchBlink({ match }: { match: Match }) {
     const [action, setAction] = useState<Action | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const { isRegistryLoaded } = useActionsRegistryInterval();
 
     useEffect(() => {
         try {
@@ -63,7 +65,7 @@ export function MatchBlink({ match }: { match: Match }) {
         );
     }
 
-    return action ? (
+    return isRegistryLoaded && action ? (
         <Center>
             <div className="w-full max-w-[500px]">
                 <Blink
