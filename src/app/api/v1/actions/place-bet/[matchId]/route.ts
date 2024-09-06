@@ -69,7 +69,7 @@ export async function GET(req: NextRequest, { params }: Params) {
             links: {
                 actions: [
                     {
-                        label: `Place bet`,
+                        label,
                         href: `/api/v1/actions/place-bet/${matchId}?team={team}&token={token}&amount={amount}`,
                         parameters: [
                             {
